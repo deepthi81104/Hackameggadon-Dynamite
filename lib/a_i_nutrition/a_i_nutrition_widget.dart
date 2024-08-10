@@ -712,13 +712,6 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                           _model.fooditemTextController.text,
                           ParamType.String,
                         ),
-                        'carbs': serializeParam(
-                          getJsonField(
-                            (_model.apiResult41u?.jsonBody ?? ''),
-                            r'''$.totalNutrients.CHOCDF.quantity''',
-                          ),
-                          ParamType.JSON,
-                        ),
                       }.withoutNulls,
                     );
                   },

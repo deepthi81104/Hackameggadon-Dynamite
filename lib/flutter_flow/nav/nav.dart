@@ -96,20 +96,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AINutritionWidget(),
         ),
         FFRoute(
-          name: 'AIDeficiency',
-          path: '/aIDeficiency',
-          builder: (context, params) => AIDeficiencyWidget(
-            fooditem: params.getParam(
-              'fooditem',
-              ParamType.String,
-            ),
-            carbs: params.getParam(
-              'carbs',
-              ParamType.JSON,
-            ),
-          ),
-        ),
-        FFRoute(
           name: 'Exercise',
           path: '/exercise',
           builder: (context, params) => const ExerciseWidget(),
@@ -153,6 +139,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'SignIn',
           path: '/signIn',
           builder: (context, params) => const SignInWidget(),
+        ),
+        FFRoute(
+          name: 'AIDeficiency',
+          path: '/aIDeficiency',
+          builder: (context, params) => AIDeficiencyWidget(
+            fooditem: params.getParam(
+              'fooditem',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

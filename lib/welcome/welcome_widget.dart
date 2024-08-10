@@ -511,8 +511,16 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(30.0, 10.0, 30.0, 0.0),
                     child: FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: () async {
+                        context.pushNamed(
+                          'AIDeficiency',
+                          queryParameters: {
+                            'fooditem': serializeParam(
+                              '',
+                              ParamType.String,
+                            ),
+                          }.withoutNulls,
+                        );
                       },
                       text: 'Deficiency Alerts',
                       options: FFButtonOptions(
