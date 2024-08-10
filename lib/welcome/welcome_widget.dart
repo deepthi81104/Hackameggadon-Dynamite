@@ -113,8 +113,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(30.0, 10.0, 30.0, 0.0),
                     child: FFButtonWidget(
-                      onPressed: () async {
-                        context.pushNamed('AIDeficiency');
+                      onPressed: () {
+                        print('Button pressed ...');
                       },
                       text: 'Deficiency Alerts',
                       options: FFButtonOptions(
@@ -312,8 +312,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(30.0, 10.0, 30.0, 0.0),
                     child: FFButtonWidget(
-                      onPressed: () async {
-                        context.pushNamed('AIDeficiency');
+                      onPressed: () {
+                        print('Button pressed ...');
                       },
                       text: 'Deficiency Alerts',
                       options: FFButtonOptions(
@@ -511,8 +511,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(30.0, 10.0, 30.0, 0.0),
                     child: FFButtonWidget(
-                      onPressed: () async {
-                        context.pushNamed('AIDeficiency');
+                      onPressed: () {
+                        print('Button pressed ...');
                       },
                       text: 'Deficiency Alerts',
                       options: FFButtonOptions(

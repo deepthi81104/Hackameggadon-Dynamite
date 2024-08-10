@@ -260,7 +260,7 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
+                                            9.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'kcal',
                                           style: FlutterFlowTheme.of(context)
@@ -708,8 +708,16 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pushNamed(
+                      'AIDeficiency',
+                      queryParameters: {
+                        'fooditem': serializeParam(
+                          _model.fooditemTextController.text,
+                          ParamType.String,
+                        ),
+                      }.withoutNulls,
+                    );
                   },
                   text: 'Analyse Deficiency',
                   options: FFButtonOptions(
