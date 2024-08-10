@@ -43,7 +43,7 @@ class _AIGameWidgetState extends State<AIGameWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: const Color(0xFF4B39EF),
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           actions: const [],
           flexibleSpace: FlexibleSpaceBar(
@@ -70,7 +70,7 @@ class _AIGameWidgetState extends State<AIGameWidget> {
             ),
             centerTitle: true,
             expandedTitleScale: 1.0,
-            titlePadding: const EdgeInsets.all(24.0),
+            titlePadding: const EdgeInsets.all(6.0),
           ),
           elevation: 0.0,
         ),

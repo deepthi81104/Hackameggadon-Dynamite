@@ -98,7 +98,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AIDeficiency',
           path: '/aIDeficiency',
-          builder: (context, params) => const AIDeficiencyWidget(),
+          builder: (context, params) => AIDeficiencyWidget(
+            fooditem: params.getParam(
+              'fooditem',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: 'Exercise',

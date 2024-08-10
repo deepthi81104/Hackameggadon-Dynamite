@@ -5,7 +5,12 @@ import 'a_i_deficiency_model.dart';
 export 'a_i_deficiency_model.dart';
 
 class AIDeficiencyWidget extends StatefulWidget {
-  const AIDeficiencyWidget({super.key});
+  const AIDeficiencyWidget({
+    super.key,
+    String? fooditem,
+  }) : fooditem = fooditem ?? 'name';
+
+  final String fooditem;
 
   @override
   State<AIDeficiencyWidget> createState() => _AIDeficiencyWidgetState();
@@ -54,19 +59,11 @@ class _AIDeficiencyWidgetState extends State<AIDeficiencyWidget> {
           centerTitle: false,
           elevation: 2.0,
         ),
-        body: SafeArea(
+        body: const SafeArea(
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            children: [
-              Text(
-                'Hello World',
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Readex Pro',
-                      letterSpacing: 0.0,
-                    ),
-              ),
-            ],
+            children: [],
           ),
         ),
       ),

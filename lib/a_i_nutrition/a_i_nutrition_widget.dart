@@ -44,10 +44,11 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: const Color(0xFF6F61EF),
           automaticallyImplyLeading: false,
           title: Text(
             'Track your Nutrition',
+            textAlign: TextAlign.start,
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
                   color: Colors.white,
@@ -122,7 +123,18 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
               ),
               Container(
                 width: double.infinity,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(20.0),
+                    bottomRight: Radius.circular(0.0),
+                    topLeft: Radius.circular(20.0),
+                    topRight: Radius.circular(20.0),
+                  ),
+                  border: Border.all(
+                    color: FlutterFlowTheme.of(context).accent1,
+                    width: 20.0,
+                  ),
+                ),
                 alignment: const AlignmentDirectional(0.0, 1.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -204,8 +216,7 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                             iconPadding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
+                                            color: const Color(0xFF6F61EF),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -230,7 +241,7 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  45.0, 0.0, 0.0, 0.0),
+                                                  50.0, 0.0, 200.0, 0.0),
                                           child: Text(
                                             getJsonField(
                                               (_model.apiResult41u?.jsonBody ??
@@ -291,8 +302,7 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                         iconPadding:
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                        color: const Color(0xFF6F61EF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -341,35 +351,6 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                           ),
                                     ),
                                   ),
-                                  FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: 'Button',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
                                 ],
                               ),
                             ),
@@ -390,7 +371,7 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                       onPressed: () {
                                         print('Button pressed ...');
                                       },
-                                      text: 'Total Lipids(Fat)',
+                                      text: 'Total Lipids(Fat',
                                       options: FFButtonOptions(
                                         height: 40.0,
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -398,8 +379,7 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                         iconPadding:
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                        color: const Color(0xFF6F61EF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -476,8 +456,7 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                         iconPadding:
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                        color: const Color(0xFF6F61EF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -546,7 +525,7 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                       onPressed: () {
                                         print('Button pressed ...');
                                       },
-                                      text: '     Fiber               ',
+                                      text: '     Fiber           ',
                                       options: FFButtonOptions(
                                         height: 40.0,
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -554,8 +533,7 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                         iconPadding:
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                        color: const Color(0xFF6F61EF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -632,8 +610,7 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                         iconPadding:
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                        color: const Color(0xFF6F61EF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -693,9 +670,9 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       _model.apiResult41u = await NutrtionFactsCall.call(
@@ -725,6 +702,34 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                child: FFButtonWidget(
+                  onPressed: () {
+                    print('Button pressed ...');
+                  },
+                  text: 'Analyse Deficiency',
+                  options: FFButtonOptions(
+                    height: 40.0,
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                    iconPadding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).primary,
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Readex Pro',
+                          color: Colors.white,
+                          letterSpacing: 0.0,
+                        ),
+                    elevation: 3.0,
+                    borderSide: const BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
               ),
