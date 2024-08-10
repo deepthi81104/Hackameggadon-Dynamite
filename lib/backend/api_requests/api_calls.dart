@@ -51,7 +51,7 @@ class NutrtionFactsCall {
 
 class GeminiAITextCall {
   static Future<ApiCallResponse> call({
-    String? apiKey = 'AIzaSyA3ZjSYIKXCEgtpiEG31e0Zlxx_kMpO9E8',
+    String? apiKey = 'AIzaSyD_BnurA3kxzsvQ3Ltgd2uOhazgAtmocAY',
     String? prompt = '',
   }) async {
     final ffApiRequestBody = '''
