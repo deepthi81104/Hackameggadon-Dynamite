@@ -1,2 +1,7 @@
-# Hackameggadon-Dynamite
-This is our repository we created it at 11 AM
+# project
+
+A new Flutter project.
+
+## Getting Started
+
+FlutterFlow projects are built to run on the Flutter _stable_ release.
