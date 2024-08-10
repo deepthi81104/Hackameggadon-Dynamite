@@ -49,6 +49,50 @@ class NutrtionFactsCall {
       ));
 }
 
+class GeminiAITextCall {
+  static Future<ApiCallResponse> call({
+    String? apiKey = 'AIzaSyA3ZjSYIKXCEgtpiEG31e0Zlxx_kMpO9E8',
+    String? prompt = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "contents": [
+    {
+      "parts": [
+        {
+          "text": "$prompt"
+        }
+      ]
+    }
+  ]
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Gemini AI Text',
+      apiUrl:
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=$apiKey',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? textResponse(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.candidates[:].content.parts[:].text''',
+      ));
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

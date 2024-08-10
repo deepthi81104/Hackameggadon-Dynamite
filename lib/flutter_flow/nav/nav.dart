@@ -106,11 +106,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ExerciseWidget(),
         ),
         FFRoute(
-          name: 'AIconnect',
-          path: '/aIconnect',
-          builder: (context, params) => const AIconnectWidget(),
-        ),
-        FFRoute(
           name: 'AIGame',
           path: '/AIGame',
           builder: (context, params) => const AIGameWidget(),
@@ -124,6 +119,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'sampleAIchat',
           path: '/sampleAIchat',
           builder: (context, params) => const SampleAIchatWidget(),
+        ),
+        FFRoute(
+          name: 'geminisample',
+          path: '/geminisample',
+          builder: (context, params) => const GeminisampleWidget(),
+        ),
+        FFRoute(
+          name: 'NutrinovaConnect',
+          path: '/nutrinovaConnect',
+          builder: (context, params) => const NutrinovaConnectWidget(),
+        ),
+        FFRoute(
+          name: 'geminiconnect',
+          path: '/geminiconnect',
+          builder: (context, params) => const GeminiconnectWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

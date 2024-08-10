@@ -57,7 +57,7 @@ class _SampleAIchatWidgetState extends State<SampleAIchatWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.pushNamed('geminisample');
             },
           ),
           title: Text(

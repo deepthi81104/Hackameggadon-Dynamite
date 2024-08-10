@@ -196,7 +196,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(30.0, 30.0, 30.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('AIconnect');
+                    context.pushNamed('NutrinovaConnect');
                   },
                   text: 'NUTRINOVA Connect',
                   options: FFButtonOptions(
@@ -228,6 +228,35 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                     context.pushNamed('AIGame');
                   },
                   text: 'NUTRINOVA Challenges',
+                  options: FFButtonOptions(
+                    width: 400.0,
+                    height: 60.0,
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                    iconPadding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).primary,
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Readex Pro',
+                          color: Colors.white,
+                          letterSpacing: 0.0,
+                        ),
+                    elevation: 3.0,
+                    borderSide: const BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(30.0, 30.0, 30.0, 0.0),
+                child: FFButtonWidget(
+                  onPressed: () async {
+                    context.pushNamed('geminiconnect');
+                  },
+                  text: 'Chat with AI',
                   options: FFButtonOptions(
                     width: 400.0,
                     height: 60.0,
