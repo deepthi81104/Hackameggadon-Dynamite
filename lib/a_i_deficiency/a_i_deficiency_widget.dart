@@ -8,9 +8,11 @@ class AIDeficiencyWidget extends StatefulWidget {
   const AIDeficiencyWidget({
     super.key,
     String? fooditem,
+    required this.carbs,
   }) : fooditem = fooditem ?? 'name';
 
   final String fooditem;
+  final dynamic carbs;
 
   @override
   State<AIDeficiencyWidget> createState() => _AIDeficiencyWidgetState();
@@ -81,12 +83,81 @@ class _AIDeficiencyWidgetState extends State<AIDeficiencyWidget> {
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Text(
-                    'Hello World',
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          letterSpacing: 0.0,
-                        ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(60.0, 70.0, 0.0, 0.0),
+                    child: Text(
+                      'Carbohybrates',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(100.0, 70.0, 0.0, 0.0),
+                    child: Text(
+                      '23 g',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(60.0, 70.0, 0.0, 0.0),
+                    child: Text(
+                      'Fats',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(180.0, 70.0, 0.0, 0.0),
+                    child: Text(
+                      '23 g',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(60.0, 70.0, 0.0, 0.0),
+                    child: Text(
+                      'Fats',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(180.0, 70.0, 0.0, 0.0),
+                    child: Text(
+                      '23 g',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
                   ),
                 ],
               ),

@@ -103,6 +103,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'fooditem',
               ParamType.String,
             ),
+            carbs: params.getParam(
+              'carbs',
+              ParamType.JSON,
+            ),
           ),
         ),
         FFRoute(
@@ -139,6 +143,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'geminiconnect',
           path: '/geminiconnect',
           builder: (context, params) => const GeminiconnectWidget(),
+        ),
+        FFRoute(
+          name: 'chat',
+          path: '/chat',
+          builder: (context, params) => const ChatWidget(),
+        ),
+        FFRoute(
+          name: 'SignIn',
+          path: '/signIn',
+          builder: (context, params) => const SignInWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

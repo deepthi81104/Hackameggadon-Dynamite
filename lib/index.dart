@@ -11,3 +11,5 @@ export '/geminisample/geminisample_widget.dart' show GeminisampleWidget;
 export '/nutrinova_connect/nutrinova_connect_widget.dart'
     show NutrinovaConnectWidget;
 export '/geminiconnect/geminiconnect_widget.dart' show GeminiconnectWidget;
+export '/chat/chat_widget.dart' show ChatWidget;
+export '/sign_in/sign_in_widget.dart' show SignInWidget;

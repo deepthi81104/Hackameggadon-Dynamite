@@ -241,7 +241,7 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  50.0, 0.0, 200.0, 0.0),
+                                                  50.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             getJsonField(
                                               (_model.apiResult41u?.jsonBody ??
@@ -258,19 +258,15 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                                           ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            9.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          'kcal',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                fontSize: 20.0,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
+                                      Text(
+                                        'kcal',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ],
                                   );
@@ -715,6 +711,13 @@ class _AINutritionWidgetState extends State<AINutritionWidget> {
                         'fooditem': serializeParam(
                           _model.fooditemTextController.text,
                           ParamType.String,
+                        ),
+                        'carbs': serializeParam(
+                          getJsonField(
+                            (_model.apiResult41u?.jsonBody ?? ''),
+                            r'''$.totalNutrients.CHOCDF.quantity''',
+                          ),
+                          ParamType.JSON,
                         ),
                       }.withoutNulls,
                     );

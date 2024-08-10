@@ -662,7 +662,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                         const EdgeInsetsDirectional.fromSTEB(30.0, 10.0, 30.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed('geminiconnect');
+                        context.pushNamed('chat');
                       },
                       text: 'Chat with AI',
                       options: FFButtonOptions(
