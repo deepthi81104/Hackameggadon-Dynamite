@@ -9,7 +9,10 @@ export '/sample_a_ichat/sample_a_ichat_widget.dart' show SampleAIchatWidget;
 export '/geminisample/geminisample_widget.dart' show GeminisampleWidget;
 export '/nutrinova_connect/nutrinova_connect_widget.dart'
     show NutrinovaConnectWidget;
-export '/geminiconnect/geminiconnect_widget.dart' show GeminiconnectWidget;
+export '/userlogs/userlogs_widget.dart' show UserlogsWidget;
 export '/chat/chat_widget.dart' show ChatWidget;
 export '/sign_in/sign_in_widget.dart' show SignInWidget;
 export '/a_i_deficiency/a_i_deficiency_widget.dart' show AIDeficiencyWidget;
+export '/waterlog/waterlog_widget.dart' show WaterlogWidget;
+export '/exercisebackend/exercisebackend_widget.dart'
+    show ExercisebackendWidget;

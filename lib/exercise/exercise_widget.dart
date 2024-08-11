@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:lottie/lottie.dart';
 import 'exercise_model.dart';
 export 'exercise_model.dart';
@@ -25,14 +26,23 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
     super.initState();
     _model = createModel(context, () => ExerciseModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        _model.userAgeTextController?.text = 'userAge';
+        _model.userAgeTextController?.selection = TextSelection.collapsed(
+            offset: _model.userAgeTextController!.text.length);
+      });
+    });
+
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.userAgeTextController ??= TextEditingController();
+    _model.userAgeFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -52,7 +62,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: const Color(0xC83AF36D),
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: true,
           title: Text(
             'Tailored Exercise plans',
@@ -84,6 +94,15 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                           child: TextFormField(
                             controller: _model.textController1,
                             focusNode: _model.textFieldFocusNode1,
+                            onFieldSubmitted: (_) async {
+                              setState(() {
+                                _model.textController1?.text = 'userHeight';
+                                _model.textController1?.selection =
+                                    TextSelection.collapsed(
+                                        offset: _model
+                                            .textController1!.text.length);
+                              });
+                            },
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -194,11 +213,16 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 16.0),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController1 ??=
+                            controller: _model.dropDownValueController ??=
                                 FormFieldController<String>(null),
                             options: const ['Male', 'Female', 'Prefer Not to Say'],
-                            onChanged: (val) =>
-                                setState(() => _model.dropDownValue1 = val),
+                            onChanged: (val) async {
+                              setState(() => _model.dropDownValue = val);
+                              setState(() {
+                                _model.dropDownValueController?.value =
+                                    'userGender';
+                              });
+                            },
                             width: 360.0,
                             height: 56.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -231,8 +255,8 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 16.0),
                           child: TextFormField(
-                            controller: _model.textController3,
-                            focusNode: _model.textFieldFocusNode3,
+                            controller: _model.userAgeTextController,
+                            focusNode: _model.userAgeFocusNode,
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -279,7 +303,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController3Validator
+                            validator: _model.userAgeTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -287,11 +311,12 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 16.0),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController2 ??=
-                                FormFieldController<String>(null),
+                            controller:
+                                _model.userFitnessLevelValueController ??=
+                                    FormFieldController<String>(null),
                             options: const ['Beginner', 'Intermediate', 'Advanced'],
-                            onChanged: (val) =>
-                                setState(() => _model.dropDownValue2 = val),
+                            onChanged: (val) => setState(
+                                () => _model.userFitnessLevelValue = val),
                             width: 364.0,
                             height: 56.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -324,16 +349,17 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 16.0),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController3 ??=
-                                FormFieldController<String>(null),
+                            controller:
+                                _model.userActivityLevelValueController ??=
+                                    FormFieldController<String>(null),
                             options: const [
                               'Sedentary',
                               'Lightly active',
                               'Active',
                               'Very Active'
                             ],
-                            onChanged: (val) =>
-                                setState(() => _model.dropDownValue3 = val),
+                            onChanged: (val) => setState(
+                                () => _model.userActivityLevelValue = val),
                             width: 392.0,
                             height: 56.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -367,27 +393,37 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                     Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
                           16.0, 16.0, 16.0, 16.0),
-                      child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onDoubleTap: () async {
+                          context.pushNamed('exercisebackend');
                         },
-                        text: 'Submit',
-                        options: FFButtonOptions(
-                          width: double.infinity,
-                          height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleMedium.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                  ),
-                          elevation: 0.0,
-                          borderRadius: BorderRadius.circular(10.0),
+                        child: FFButtonWidget(
+                          onPressed: () {
+                            print('Button pressed ...');
+                          },
+                          text: 'Submit',
+                          options: FFButtonOptions(
+                            width: double.infinity,
+                            height: 40.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                ),
+                            elevation: 0.0,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
                         ),
                       ),
                     ),

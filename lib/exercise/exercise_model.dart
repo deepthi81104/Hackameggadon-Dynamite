@@ -15,18 +15,18 @@ class ExerciseModel extends FlutterFlowModel<ExerciseWidget> {
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
   // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
+  // State field(s) for userAge widget.
+  FocusNode? userAgeFocusNode;
+  TextEditingController? userAgeTextController;
+  String? Function(BuildContext, String?)? userAgeTextControllerValidator;
+  // State field(s) for userFitnessLevel widget.
+  String? userFitnessLevelValue;
+  FormFieldController<String>? userFitnessLevelValueController;
+  // State field(s) for userActivityLevel widget.
+  String? userActivityLevelValue;
+  FormFieldController<String>? userActivityLevelValueController;
 
   @override
   void initState(BuildContext context) {}
@@ -39,7 +39,7 @@ class ExerciseModel extends FlutterFlowModel<ExerciseWidget> {
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    userAgeFocusNode?.dispose();
+    userAgeTextController?.dispose();
   }
 }

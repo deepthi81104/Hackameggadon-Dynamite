@@ -670,9 +670,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                         const EdgeInsetsDirectional.fromSTEB(30.0, 10.0, 30.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed('chat');
+                        context.pushNamed('userlogs');
                       },
-                      text: 'Chat with AI',
+                      text: 'User Logs',
                       options: FFButtonOptions(
                         width: 400.0,
                         height: 60.0,

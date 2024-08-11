@@ -126,9 +126,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const NutrinovaConnectWidget(),
         ),
         FFRoute(
-          name: 'geminiconnect',
-          path: '/geminiconnect',
-          builder: (context, params) => const GeminiconnectWidget(),
+          name: 'userlogs',
+          path: '/userlogs',
+          builder: (context, params) => const UserlogsWidget(),
         ),
         FFRoute(
           name: 'chat',
@@ -149,6 +149,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'WATERLOG',
+          path: '/waterlog',
+          builder: (context, params) => const WaterlogWidget(),
+        ),
+        FFRoute(
+          name: 'exercisebackend',
+          path: '/exercisebackend',
+          builder: (context, params) => const ExercisebackendWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
