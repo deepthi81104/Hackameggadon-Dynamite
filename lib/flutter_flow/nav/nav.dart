@@ -159,6 +159,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'exercisebackend',
           path: '/exercisebackend',
           builder: (context, params) => const ExercisebackendWidget(),
+        ),
+        FFRoute(
+          name: 'dietrecommendation',
+          path: '/dietrecommendation',
+          builder: (context, params) => const DietrecommendationWidget(),
+        ),
+        FFRoute(
+          name: 'VEGmeal',
+          path: '/vEGmeal',
+          builder: (context, params) => const VEGmealWidget(),
+        ),
+        FFRoute(
+          name: 'NONVEGMEAL',
+          path: '/nonvegmeal',
+          builder: (context, params) => const NonvegmealWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -307,8 +307,8 @@ class _DietWidgetState extends State<DietWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 20.0, 16.0, 20.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed('dietrecommendation');
                             },
                             text: 'Submit',
                             options: FFButtonOptions(

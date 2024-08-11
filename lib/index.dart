@@ -16,3 +16,7 @@ export '/a_i_deficiency/a_i_deficiency_widget.dart' show AIDeficiencyWidget;
 export '/waterlog/waterlog_widget.dart' show WaterlogWidget;
 export '/exercisebackend/exercisebackend_widget.dart'
     show ExercisebackendWidget;
+export '/dietrecommendation/dietrecommendation_widget.dart'
+    show DietrecommendationWidget;
+export '/v_e_gmeal/v_e_gmeal_widget.dart' show VEGmealWidget;
+export '/nonvegmeal/nonvegmeal_widget.dart' show NonvegmealWidget;

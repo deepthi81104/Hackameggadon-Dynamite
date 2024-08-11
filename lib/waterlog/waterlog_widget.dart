@@ -156,21 +156,15 @@ class _WaterlogWidgetState extends State<WaterlogWidget> {
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         40.0, 0.0, 0.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {},
-                                      child: Text(
-                                        'Hello World',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
+                                    child: Text(
+                                      '0.5   liters',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            fontSize: 20.0,
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                 ],
@@ -221,11 +215,12 @@ class _WaterlogWidgetState extends State<WaterlogWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         1.0, 50.0, 0.0, 0.0),
                                     child: Text(
-                                      'Hello World',
+                                      '3.2 liters',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Readex Pro',
+                                            fontSize: 20.0,
                                             letterSpacing: 0.0,
                                           ),
                                     ),

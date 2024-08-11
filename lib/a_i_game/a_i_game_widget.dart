@@ -131,31 +131,6 @@ class _AIGameWidgetState extends State<AIGameWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.8, 1.0),
-                          child: Container(
-                            width: 100.0,
-                            height: 100.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: Image.asset(
-                                  'assets/images/mwmx0_600',
-                                ).image,
-                              ),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Lottie.asset(
-                              'assets/lottie_animations/Animation_-_1723043963631.json',
-                              width: 233.0,
-                              height: 130.0,
-                              fit: BoxFit.cover,
-                              animate: true,
-                            ),
-                          ),
-                        ),
-                        Align(
                           alignment: const AlignmentDirectional(0.75, -1.02),
                           child: Text(
                             'Vegetables',
@@ -168,50 +143,26 @@ class _AIGameWidgetState extends State<AIGameWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-0.91, 1.3),
-                          child: Padding(
-                            padding: const EdgeInsets.all(2.0),
-                            child: Container(
-                              width: 108.0,
-                              height: 108.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                image: DecorationImage(
-                                  fit: BoxFit.fitWidth,
-                                  image: Image.asset(
-                                    'assets/images/photo-1536164261511-3a17e671d380?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&q=80',
-                                  ).image,
-                                ),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Lottie.asset(
-                                'assets/lottie_animations/Animation_-_1723044363333.json',
-                                width: 235.0,
-                                height: 169.0,
-                                fit: BoxFit.cover,
-                                animate: true,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Align(
                           alignment: const AlignmentDirectional(0.7, 1.0),
-                          child: Text(
-                            'Proteins',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                              fontFamily: 'Readex Pro',
-                              letterSpacing: 0.0,
-                              shadows: [
-                                Shadow(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  offset: const Offset(2.0, 2.0),
-                                  blurRadius: 2.0,
-                                )
-                              ],
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 250.0, 0.0, 0.0),
+                            child: Text(
+                              'Proteins',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                fontFamily: 'Readex Pro',
+                                letterSpacing: 0.0,
+                                shadows: [
+                                  Shadow(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    offset: const Offset(2.0, 2.0),
+                                    blurRadius: 2.0,
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -239,7 +190,7 @@ class _AIGameWidgetState extends State<AIGameWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.69, 0.54),
+                    alignment: const AlignmentDirectional(0.76, 0.95),
                     child: Lottie.asset(
                       'assets/lottie_animations/Animation_-_1723044862087.json',
                       width: 100.0,
